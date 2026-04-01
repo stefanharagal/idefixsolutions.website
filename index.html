@@ -16,48 +16,31 @@
       --text:   #e0eaf5;
       --muted:  #6a8aaa;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--dark);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+    body { background: var(--dark); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
     /* ── MODAL ── */
     #modal-overlay {
       position: fixed; inset: 0; z-index: 9999;
-      background: rgba(5, 10, 18, 0.96);
+      background: rgba(5,10,18,0.97);
       display: flex; align-items: center; justify-content: center;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
     }
     .modal-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--cyan);
-      border-radius: 6px;
-      max-width: 480px; width: 90%;
-      padding: 48px 40px 40px;
-      text-align: center;
-      box-shadow: 0 0 60px rgba(0,200,255,0.08);
+      background: var(--card); border: 1px solid var(--border);
+      border-top: 3px solid var(--cyan); border-radius: 6px;
+      max-width: 480px; width: 90%; padding: 48px 40px 40px; text-align: center;
+      box-shadow: 0 0 80px rgba(0,200,255,0.1);
     }
     .modal-badge {
-      display: inline-block;
-      background: rgba(0,200,255,0.1);
-      border: 1px solid rgba(0,200,255,0.3);
-      color: var(--cyan);
+      display: inline-block; background: rgba(0,200,255,0.1);
+      border: 1px solid rgba(0,200,255,0.3); color: var(--cyan);
       font-size: 10px; font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 24px;
     }
-    .modal-logo { width: 200px; margin: 0 auto 24px; display: block; }
-    .modal-box h2 {
-      font-family: 'Bebas Neue', sans-serif; font-size: 28px;
-      letter-spacing: 2px; color: #fff; margin-bottom: 16px;
-    }
+    .modal-logo { width: 220px; margin: 0 auto 24px; display: block; }
+    .modal-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: #fff; margin-bottom: 16px; }
     .modal-box p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
     .modal-box p strong { color: var(--text); }
     .modal-btn {
@@ -74,84 +57,35 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5vw; height: 70px;
-      background: rgba(9,13,18,0.93);
-      backdrop-filter: blur(12px);
+      background: rgba(9,13,18,0.94); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo img { height: 42px; object-fit: contain; }
+    .nav-logo img { height: 44px; object-fit: contain; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--cyan); }
 
     /* ── HERO ── */
-    #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 120px 5vw 80px; position: relative; overflow: hidden;
-    }
-    .hero-grid-bg {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-glow {
-      position: absolute; top: -200px; right: -200px; width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(0,200,255,0.07) 0%, transparent 65%);
-    }
-    .hero-glow2 {
-      position: absolute; bottom: -150px; left: 10%; width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(77,255,124,0.05) 0%, transparent 65%);
-    }
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 5vw 80px; position: relative; overflow: hidden; }
+    .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-glow { position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,200,255,0.07) 0%, transparent 65%); }
+    .hero-glow2 { position: absolute; bottom: -150px; left: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(77,255,124,0.05) 0%, transparent 65%); }
     .hero-content { position: relative; z-index: 1; max-width: 820px; }
-    .hero-tag {
-      display: inline-block;
-      background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.3);
-      color: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; padding: 6px 14px; border-radius: 2px; margin-bottom: 28px;
-    }
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(56px, 9vw, 110px);
-      line-height: 0.95; letter-spacing: 2px; margin-bottom: 32px; color: #fff;
-    }
-    h1 .grad {
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+    .hero-tag { display: inline-block; background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.3); color: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; margin-bottom: 28px; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 9vw, 110px); line-height: 0.95; letter-spacing: 2px; margin-bottom: 32px; color: #fff; }
+    h1 .grad { background: linear-gradient(90deg, var(--cyan), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .hero-sub { font-size: 18px; color: var(--muted); max-width: 520px; margin-bottom: 48px; line-height: 1.8; }
     .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary {
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      color: #090d12; padding: 14px 32px; font-weight: 700; font-size: 14px;
-      letter-spacing: 1px; text-transform: uppercase; text-decoration: none;
-      border-radius: 2px; transition: opacity 0.2s, transform 0.2s;
-    }
+    .btn-primary { background: linear-gradient(90deg, var(--cyan), var(--green)); color: #090d12; padding: 14px 32px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: opacity 0.2s, transform 0.2s; }
     .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
-    .btn-secondary {
-      border: 1px solid var(--border); color: var(--text); padding: 14px 32px;
-      font-weight: 500; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;
-      text-decoration: none; border-radius: 2px; transition: border-color 0.2s, color 0.2s;
-    }
+    .btn-secondary { border: 1px solid var(--border); color: var(--text); padding: 14px 32px; font-weight: 500; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: border-color 0.2s, color 0.2s; }
     .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
 
     /* ── STATS ── */
-    .stats-bar {
-      background: var(--mid);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 36px 5vw; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px;
-    }
+    .stats-bar { background: var(--mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 36px 5vw; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
     .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 42px;
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: 2px; line-height: 1;
-    }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 42px; background: linear-gradient(90deg, var(--cyan), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; line-height: 1; }
     .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
 
     /* ── SECTIONS ── */
@@ -163,15 +97,8 @@
     /* ── SERVICES ── */
     #sluzby { background: var(--mid); }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
-    .service-card {
-      background: var(--card); padding: 40px 32px;
-      position: relative; overflow: hidden; transition: background 0.3s;
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-    }
+    .service-card { background: var(--card); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--green)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
     .service-card:hover { background: #192030; }
     .service-card:hover::before { transform: scaleX(1); }
     .service-icon { font-size: 32px; margin-bottom: 20px; }
@@ -180,90 +107,78 @@
 
     /* ── REFERENCE ── */
     #reference { background: var(--dark); }
-    .ref-oc { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 64px; }
-    .ref-oc img { width: 100%; display: block; max-height: 380px; object-fit: cover; }
-    .ref-oc-body { padding: 28px 32px; background: var(--card); }
-    .ref-oc-body p { font-size: 15px; color: var(--muted); }
-    .project-tag {
-      display: inline-block;
-      background: rgba(0,200,255,0.1); border: 1px solid rgba(0,200,255,0.25);
-      color: var(--cyan); font-size: 10px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 14px;
-    }
-    .ref-oc-body h3 { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; color: #fff; margin-bottom: 10px; }
 
-    .before-after-label {
-      font-size: 12px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; margin-bottom: 16px; margin-top: 40px; color: var(--muted);
+    /* Year group */
+    .year-group { margin-bottom: 80px; }
+    .year-label {
+      font-family: 'Bebas Neue', sans-serif; font-size: 72px; letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1; margin-bottom: 32px; opacity: 0.18;
     }
-    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 4px; overflow: hidden; }
-    .ba-item { position: relative; }
-    .ba-item img { width: 100%; display: block; height: 300px; object-fit: cover; }
-    .ba-badge {
-      position: absolute; top: 14px; left: 14px;
-      padding: 5px 12px; font-size: 11px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase; border-radius: 2px;
-    }
-    .ba-badge.before { background: rgba(0,0,0,0.7); color: #ff6b6b; border: 1px solid #ff6b6b; }
-    .ba-badge.after  { background: rgba(0,0,0,0.7); color: var(--green); border: 1px solid var(--green); }
+    .year-projects { display: flex; flex-direction: column; gap: 56px; }
 
-    .project-meta { margin-top: 28px; display: flex; gap: 32px; flex-wrap: wrap; }
+    /* Single project card */
+    .project-block { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--card); }
+    .project-header { position: relative; }
+    .project-header img { width: 100%; display: block; max-height: 320px; object-fit: cover; }
+    .project-header-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 28px;
+      background: linear-gradient(transparent, rgba(9,13,18,0.95));
+    }
+    .project-tag { display: inline-block; background: rgba(0,200,255,0.12); border: 1px solid rgba(0,200,255,0.3); color: var(--cyan); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 8px; }
+    .project-title-overlay { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; color: #fff; }
+
+    .project-body { padding: 32px; }
+    .project-body p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 28px; }
+    .project-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
     .project-meta-item { font-size: 13px; }
     .project-meta-item span { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+    /* Before/After */
+    .ba-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 4px; overflow: hidden; }
+    .ba-item { position: relative; }
+    .ba-item img { width: 100%; display: block; height: 240px; object-fit: cover; }
+    .ba-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 2px; }
+    .ba-badge.before { background: rgba(0,0,0,0.75); color: #ff6b6b; border: 1px solid #ff6b6b; }
+    .ba-badge.after  { background: rgba(0,0,0,0.75); color: var(--green); border: 1px solid var(--green); }
 
     /* ── KONTAKT ── */
     #kontakt { background: var(--mid); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    @media (max-width: 700px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .nav-links { display: none; }
-      .before-after { grid-template-columns: 1fr; }
-      .ba-item img { height: 220px; }
-    }
     .contact-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; color: #fff; margin-bottom: 24px; }
     .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
-    .contact-icon {
-      width: 42px; height: 42px;
-      background: rgba(0,200,255,0.08); border: 1px solid rgba(0,200,255,0.2);
-      border-radius: 4px; display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
-    }
+    .contact-icon { width: 42px; height: 42px; background: rgba(0,200,255,0.08); border: 1px solid rgba(0,200,255,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
     .contact-item-text { font-size: 14px; color: var(--muted); }
     .contact-item-text strong { color: var(--text); display: block; margin-bottom: 2px; }
     .contact-item-text a { color: var(--muted); text-decoration: none; }
     .contact-item-text a:hover { color: var(--cyan); }
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .contact-form input, .contact-form textarea {
-      background: var(--card); border: 1px solid var(--border);
-      color: var(--text); font-family: 'DM Sans', sans-serif;
-      font-size: 14px; padding: 14px 18px; border-radius: 2px; outline: none; transition: border-color 0.2s;
-    }
+    .contact-form input, .contact-form textarea { background: var(--card); border: 1px solid var(--border); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 14px 18px; border-radius: 2px; outline: none; transition: border-color 0.2s; }
     .contact-form input:focus, .contact-form textarea:focus { border-color: var(--cyan); }
     .contact-form textarea { resize: vertical; min-height: 130px; }
-    .contact-form button {
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      color: #090d12; border: none; padding: 14px 32px;
-      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px;
-      letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
-      border-radius: 2px; transition: opacity 0.2s; align-self: flex-start;
-    }
+    .contact-form button { background: linear-gradient(90deg, var(--cyan), var(--green)); color: #090d12; border: none; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: opacity 0.2s; align-self: flex-start; }
     .contact-form button:hover { opacity: 0.85; }
+    .form-status { display: none; padding: 12px 18px; border-radius: 2px; font-size: 14px; font-weight: 500; }
+    .form-status.success { background: rgba(77,255,124,0.1); border: 1px solid rgba(77,255,124,0.3); color: var(--green); }
+    .form-status.error { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.3); color: #ff6b6b; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--dark); border-top: 1px solid var(--border);
-      padding: 32px 5vw;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
-    }
+    footer { background: var(--dark); border-top: 1px solid var(--border); padding: 32px 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer p { font-size: 13px; color: var(--muted); }
-    .footer-brand {
-      font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--green));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+    .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; background: linear-gradient(90deg, var(--cyan), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .nav-links { display: none; }
+      .before-after { grid-template-columns: 1fr; }
+      .ba-item img { height: 200px; }
+      .year-label { font-size: 48px; }
+    }
   </style>
 </head>
 <body>
@@ -303,10 +218,7 @@
     <div class="hero-content">
       <div class="hero-tag">⚡ Průmyslové elektroinstalace</div>
       <h1>IDEFIX<br><span class="grad">SOLUTIONS</span></h1>
-      <p class="hero-sub">
-        Profesionální elektroinstalační práce pro průmyslové objekty.
-        Dodáváme spolehlivá a bezpečná řešení – od návrhu až po realizaci.
-      </p>
+      <p class="hero-sub">Profesionální elektroinstalační práce pro průmyslové objekty. Dodáváme spolehlivá a bezpečná řešení – od návrhu až po realizaci.</p>
       <div class="hero-cta">
         <a href="#kontakt" class="btn-primary">Nezávazná poptávka</a>
         <a href="#sluzby" class="btn-secondary">Naše služby</a>
@@ -355,43 +267,128 @@
   <section id="reference">
     <div class="section-tag">Realizované projekty</div>
     <h2>REFERENCE</h2>
-    <p class="section-desc">Ukázka naší dosavadní práce. Každý projekt realizujeme s maximální precizností.</p>
+    <p class="section-desc">Přehled dokončených zakázek řazený podle roku realizace.</p>
 
-    <div class="ref-oc fade-up">
-      <img src="oc-trnavka.jpg" alt="Obchodní centrum Trnávka Vlašim">
-      <div class="ref-oc-body">
-        <div class="project-tag">Klient · 2024</div>
-        <h3>OC Trnávka Vlašim</h3>
-        <p>Moderní obchodní centrum ve Vlašimi, pro které jsme realizovali kompletní rekonstrukci elektroinstalace v podzemních garážích.</p>
+    <!-- ══ 2026 ══ -->
+    <div class="year-group fade-up">
+      <div class="year-label">2026</div>
+      <div class="year-projects">
+
+        <div class="project-block">
+          <div class="project-header">
+            <img src="oc-trnavka.png" alt="OC Trnávka Vlašim">
+            <div class="project-header-overlay">
+              <div class="project-tag">Dokončeno · 2026</div>
+              <div class="project-title-overlay">Výměna osvětlení a kabeláže – garáže OC Trnávka Vlašim</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>Komplexní rekonstrukce elektroinstalace v podzemních garážích obchodního centra Trnávka ve Vlašimi. Projekt zahrnoval výměnu stávajícího zastaralého osvětlení za moderní LED svítidla a kompletní obnovu silnoproudé kabeláže. Výsledkem je výrazné snížení energetické náročnosti a zvýšení bezpečnosti provozu.</p>
+            <div class="project-meta">
+              <div class="project-meta-item"><span>Typ objektu</span>Obchodní centrum</div>
+              <div class="project-meta-item"><span>Rozsah prací</span>Osvětlení + kabeláž</div>
+              <div class="project-meta-item"><span>Technologie</span>LED, ČSN EN 60598</div>
+              <div class="project-meta-item"><span>Lokalita</span>Vlašim</div>
+            </div>
+            <div class="ba-label">Stav před a po rekonstrukci</div>
+            <div class="before-after">
+              <div class="ba-item"><img src="garaze-pred.png" alt="Před"><div class="ba-badge before">Před</div></div>
+              <div class="ba-item"><img src="garaze-po.png" alt="Po"><div class="ba-badge after">Po</div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="fade-up">
-      <div class="project-tag">Dokončeno · 2024</div>
-      <h2 style="font-size:32px; margin-bottom:12px;">Výměna osvětlení a kabeláže – garáže OC Trnávka</h2>
-      <p style="color:var(--muted); max-width:680px; font-size:15px;">
-        Komplexní rekonstrukce elektroinstalace v podzemních garážích. Projekt zahrnoval výměnu
-        stávajícího zastaralého osvětlení za moderní LED svítidla a kompletní obnovu
-        silnoproudé kabeláže. Výsledkem je výrazné snížení energetické náročnosti a zvýšení bezpečnosti provozu.
-      </p>
-      <div class="before-after-label">Stav před a po rekonstrukci</div>
-      <div class="before-after">
-        <div class="ba-item">
-          <img src="garage-before.jpg" alt="Garáže před rekonstrukcí">
-          <div class="ba-badge before">Před</div>
+    <!-- ══ 2025 ══ -->
+    <div class="year-group fade-up">
+      <div class="year-label">2025</div>
+      <div class="year-projects">
+
+        <div class="project-block">
+          <div class="project-header">
+            <img src="benesov-budova.png" alt="Parkovací dům Benešov">
+            <div class="project-header-overlay">
+              <div class="project-tag">Dokončeno · 2025</div>
+              <div class="project-title-overlay">Modernizace osvětlení parkovacího domu – Benešov</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>Kompletní rekonstrukce osvětlení vícepatrového parkovacího domu v centru města Benešov. Projekt zahrnoval výměnu zastaralých zářivkových svítidel za moderní LED technologii, instalaci nové kabeláže a zavedení inteligentního řízení osvětlení pomocí pohybových senzorů. Realizace probíhala za plného provozu objektu s důrazem na bezpečnost a minimální omezení uživatelů. Výsledkem bylo výrazné snížení energetické náročnosti a zvýšení komfortu parkování.</p>
+            <div class="project-meta">
+              <div class="project-meta-item"><span>Typ objektu</span>Parkovací dům</div>
+              <div class="project-meta-item"><span>Rozsah prací</span>LED osvětlení + kabeláž</div>
+              <div class="project-meta-item"><span>Technologie</span>LED, pohybové senzory</div>
+              <div class="project-meta-item"><span>Lokalita</span>Benešov</div>
+            </div>
+            <div class="ba-label">Stav před a po rekonstrukci</div>
+            <div class="before-after">
+              <div class="ba-item"><img src="benesov-pred.png" alt="Před"><div class="ba-badge before">Před</div></div>
+              <div class="ba-item"><img src="benesov-po.png" alt="Po"><div class="ba-badge after">Po</div></div>
+            </div>
+          </div>
         </div>
-        <div class="ba-item">
-          <img src="garage-after.jpg" alt="Garáže po rekonstrukci">
-          <div class="ba-badge after">Po</div>
+
+        <div class="project-block">
+          <div class="project-header">
+            <img src="praha-budova.png" alt="Administrativní budova Praha">
+            <div class="project-header-overlay">
+              <div class="project-tag">Dokončeno · 2025</div>
+              <div class="project-title-overlay">Rekonstrukce osvětlení podzemních garáží – Praha</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>Projekt modernizace osvětlení podzemních garáží administrativního komplexu v Praze zahrnoval kompletní výměnu elektroinstalace, instalaci LED svítidel a implementaci zónového řízení osvětlení. Součástí řešení bylo také nouzové osvětlení a osvětlení únikových cest dle aktuálních norem. Projekt přispěl ke zvýšení bezpečnosti zaměstnanců a návštěvníků a zároveň snížil provozní náklady objektu.</p>
+            <div class="project-meta">
+              <div class="project-meta-item"><span>Typ objektu</span>Administrativní komplex</div>
+              <div class="project-meta-item"><span>Rozsah prací</span>Elektroinstalace + LED</div>
+              <div class="project-meta-item"><span>Technologie</span>LED, zónové řízení, nouzové osvětlení</div>
+              <div class="project-meta-item"><span>Lokalita</span>Praha</div>
+            </div>
+            <div class="ba-label">Stav před a po rekonstrukci</div>
+            <div class="before-after">
+              <div class="ba-item"><img src="praha-pred.png" alt="Před"><div class="ba-badge before">Před</div></div>
+              <div class="ba-item"><img src="praha-po.png" alt="Po"><div class="ba-badge after">Po</div></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="project-meta">
-        <div class="project-meta-item"><span>Typ objektu</span>Obchodní centrum</div>
-        <div class="project-meta-item"><span>Rozsah prací</span>Osvětlení + kabeláž</div>
-        <div class="project-meta-item"><span>Technologie</span>LED, ČSN EN 60598</div>
-        <div class="project-meta-item"><span>Lokalita</span>Vlašim</div>
+
       </div>
     </div>
+
+    <!-- ══ 2024 ══ -->
+    <div class="year-group fade-up">
+      <div class="year-label">2024</div>
+      <div class="year-projects">
+
+        <div class="project-block">
+          <div class="project-header">
+            <img src="tabor-budova.png" alt="OC Tábor">
+            <div class="project-header-overlay">
+              <div class="project-tag">Dokončeno · 2024</div>
+              <div class="project-title-overlay">Revitalizace osvětlení parkoviště OC – Tábor</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>Modernizace venkovního osvětlení parkoviště obchodního centra v Táboře zahrnovala instalaci nových LED stožárů, optimalizaci rozmístění svítidel a zavedení časového řízení osvětlení. Projekt byl zaměřen na zvýšení bezpečnosti návštěvníků ve večerních hodinách a snížení světelného smogu. Díky použití úsporných technologií došlo k výraznému snížení spotřeby elektrické energie.</p>
+            <div class="project-meta">
+              <div class="project-meta-item"><span>Typ objektu</span>Obchodní centrum</div>
+              <div class="project-meta-item"><span>Rozsah prací</span>Venkovní osvětlení</div>
+              <div class="project-meta-item"><span>Technologie</span>LED stožáry, časové řízení</div>
+              <div class="project-meta-item"><span>Lokalita</span>Tábor</div>
+            </div>
+            <div class="ba-label">Stav před a po rekonstrukci</div>
+            <div class="before-after">
+              <div class="ba-item"><img src="tabor-pred.png" alt="Před"><div class="ba-badge before">Před</div></div>
+              <div class="ba-item"><img src="tabor-po.png" alt="Po"><div class="ba-badge after">Po</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- KONTAKT -->
@@ -424,12 +421,15 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Vaše jméno / firma" required />
-        <input type="email" placeholder="E-mailová adresa" required />
-        <input type="text" placeholder="Předmět" />
-        <textarea placeholder="Popište váš projekt nebo dotaz..."></textarea>
-        <button type="submit">Odeslat poptávku</button>
+
+      <!-- Formspree form – nahraď YOUR_FORM_ID za ID z formspree.io -->
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="jmeno" placeholder="Vaše jméno / firma" required />
+        <input type="email" name="email" placeholder="E-mailová adresa" required />
+        <input type="text" name="predmet" placeholder="Předmět" />
+        <textarea name="zprava" placeholder="Popište váš projekt nebo dotaz..."></textarea>
+        <div class="form-status" id="formStatus"></div>
+        <button type="submit" id="formBtn">Odeslat poptávku</button>
       </form>
     </div>
   </section>
@@ -437,7 +437,7 @@
   <!-- FOOTER -->
   <footer>
     <span class="footer-brand">IDEFIX SOLUTIONS</span>
-    <p>© 2024 Idefix Solutions. Průmyslové elektroinstalace.</p>
+    <p>© 2026 Idefix Solutions. Průmyslové elektroinstalace.</p>
     <p><a href="mailto:info@idefixsolutions.website" style="color:var(--muted);text-decoration:none;">info@idefixsolutions.website</a></p>
   </footer>
 
@@ -446,24 +446,49 @@
       document.getElementById('modal-overlay').style.display = 'none';
     }
 
+    // Fade-in observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    function handleSubmit(e) {
+    // Contact form – Formspree
+    const form = document.getElementById('contactForm');
+    const btn  = document.getElementById('formBtn');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'Odesláno ✓';
-      btn.style.background = '#4caf50';
-      btn.style.color = '#fff';
-      setTimeout(() => {
-        btn.textContent = 'Odeslat poptávku';
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 3000);
-    }
+      btn.textContent = 'Odesílám...';
+      btn.disabled = true;
+
+      const data = new FormData(form);
+
+      try {
+        // ⚠️  Zaregistruj se na https://formspree.io a nahraď níže YOUR_FORM_ID
+        const res = await fetch('https://formspree.io/f/xreolvwv', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          status.textContent = '✓ Zpráva odeslána! Ozveme se vám co nejdříve.';
+          status.className = 'form-status success';
+          status.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        status.textContent = '✗ Nepodařilo se odeslat. Kontaktujte nás přímo na info@idefixsolutions.website';
+        status.className = 'form-status error';
+        status.style.display = 'block';
+      }
+
+      btn.textContent = 'Odeslat poptávku';
+      btn.disabled = false;
+    });
   </script>
 </body>
 </html>
